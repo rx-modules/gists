@@ -2,7 +2,6 @@
 # theorized by vdvman1, implemented by rx97
 
 #define storage temp:
-scoreboard objectives add temp dummy
 
 #> Inputs:
 #>   location / at context -> start point (assumes it is loaded)

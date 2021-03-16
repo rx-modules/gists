@@ -51,13 +51,16 @@ In terms of minecraft, all we have to do is take a component of a vector, like `
 
 To simplify, we can focus on just taking the magnitiude of a `Motion` vector.
 
-<!-- Summon entity if it doesn't exist, not important
-	`@function(append) dist:velocity`
+<details>
+  <summary>Summons Helper entity</summary>
 
-	```
-	execute unless entity b5feab18-60ed-5ffd-b394-d71674d85bf6 run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648, UUID:[I;-1241601256,1626169341,-1282091242,1960336374]}
-	```
--->
+`@function(append) dist:velocity`
+
+```
+execute unless entity b5feab18-60ed-5ffd-b394-d71674d85bf6 run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648, UUID:[I;-1241601256,1626169341,-1282091242,1960336374]}
+```
+
+</details>
 
 First, we can set the `Pos` tag of our helper entity to the `Motion` of entity `@s`.
 
@@ -83,23 +86,24 @@ Then, we can store the x component of our vector. We scale this up by 100,000 si
 execute store result score $velocity temp run data get entity @s Motion[0] 100000
 ```
 
-<!-- Handle x, y and z
-	`@function(append) dist:velocity`
+<details>
+  <summary>Extra steps for later</summary>
 
-	```
-	execute if score $velocity temp matches -10..10 run scoreboard players set $component temp 1
+`@function(append) dist:velocity`
 
-	execute if score $component temp matches 1 store result score $velocity temp run data get entity @s Motion[1] 100000
-	execute if score $velocity temp matches -10..10 run scoreboard players set $component temp 2
+```
+execute if score $velocity temp matches -10..10 run scoreboard players set $component temp 1
 
-	execute if score $component temp matches 2 store result score $velocity temp run data get entity @s Motion[2] 100000
-	execute if score $velocity temp matches -10..10 run scoreboard players set $component temp -1
+execute if score $component temp matches 1 store result score $velocity temp run data get entity @s Motion[1] 100000
+execute if score $velocity temp matches -10..10 run scoreboard players set $component temp 2
 
-	execute if score $component temp matches -1 run scoreboard players set $velocity temp 0
-	```
--->
+execute if score $component temp matches 2 store result score $velocity temp run data get entity @s Motion[2] 100000
+execute if score $velocity temp matches -10..10 run scoreboard players set $component temp -1
 
-<!-- @function(append) dist:velocity -->
+execute if score $component temp matches -1 run scoreboard players set $velocity temp 0
+```
+
+</details>
 
 Now, we can find our unit vector. To do this, we position outselves at the world origin (`0.0 0.0 0.0`), facing our helper entity (who is at the end point of our vector), and tp the helper entity 1 block in the direction of our vector (where it is point to). Getting `Pos[0]` will get the x component of our vector (scaled by 100).
 
@@ -109,16 +113,18 @@ Now, we can find our unit vector. To do this, we position outselves at the world
 execute positioned 0.0 0.0 0.0 as 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e facing entity @s feet run tp @s ^ ^ ^1
 execute store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[0] 100
 ```
+<details>
+  <summary>Extra steps for later</summary>
 
-<!-- Handle y and z unit vectors
-	`@function(append) dist:velocity`
+  `@function(append) dist:velocity`
 
-	```
-	execute if score $component temp matches 1 store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[1] 100
+  ```
+  execute if score $component temp matches 1 store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[1] 100
 
-	execute if score $component temp matches 2 store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[2] 100
-	```
--->
+  execute if score $component temp matches 2 store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[2] 100
+  ```
+
+</details>
 
 
 Lastly, dividing our x component from the `Motion` vector, `$velocity` by our unit vector, `$unit` will get us the magnitude of our vector (scaled by 1000).
@@ -131,21 +137,23 @@ scoreboard players operation @s velocity /= $normal_x temp
 
 Note that this example only looks at the x component. If the x component were 0, we'd also want to look at the y and z components. You can take a look at `dist:velocity` in the generated datapack for a complete example.
 
-<!-- Extras!
+<details>
+
 [`@function dist:calc`](dist.mcfunction)
 
-`@function_tag load`
+`@function dist:load`
+```
+scoreboard objectives add temp dummy
+```
+
+`@function_tag minecraft:load`
 ```
 {
 	"values": ["dist:load"]
 }
 ```
 
-`@function dist:load`
-```
-scoreboard objectives add temp dummy
-```
--->
+</details>
 
 ## Endnote
 

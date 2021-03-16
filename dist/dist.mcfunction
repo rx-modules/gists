@@ -1,4 +1,4 @@
-# License: MIT or 0BSD, which ever you wish to choose
+# License: MIT
 # theorized by vdvman1, implemented by rx97
 
 #define storage temp:

@@ -131,6 +131,22 @@ scoreboard players operation @s velocity /= $normal_x temp
 
 Note that this example only looks at the x component. If the x component were 0, we'd also want to look at the y and z components. You can take a look at `dist:velocity` in the generated datapack for a complete example.
 
+<!-- Extras!
+[`@function dist:calc`](dist/dist.mcfunction)
+
+`@function_tag load`
+```
+{
+	"values": ["dist:load"]
+}
+```
+
+`@function dist:load`
+```
+scoreboard objectives add temp dummy
+```
+-->
+
 ## Endnote
 
 @vdvman1 came up with this concept in the mcc discord so it was pretty neat to throw this together. Also, this README.md is 10x lengthier than needs to be but I wanted to try out lectern as a way of writing cool articles!

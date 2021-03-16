@@ -6,7 +6,7 @@ This method of calculating distance utilizes some facts about vectors making it 
 
 ## Resource // How to use
 
-If you are just interested in a quick utility you can easily grab [this file](dist/dist.mcfunction) or grab a datapack from the Github [releases](https://github.com/rx-modules/gists/releases) tab.
+If you are just interested in a quick utility you can easily grab [this file](dist.mcfunction) or grab a datapack from the Github [releases](https://github.com/rx-modules/gists/releases) tab.
 
 This script is pretty easy to use. It takes an input positional context as the starting point and input entity context as an ending point. Optionally, you can provide a vector in `storage` by setting `temp: dist.vector` to calculate any vector's magnitude (like `Motion` for velocity).
 
@@ -132,7 +132,7 @@ scoreboard players operation @s velocity /= $normal_x temp
 Note that this example only looks at the x component. If the x component were 0, we'd also want to look at the y and z components. You can take a look at `dist:velocity` in the generated datapack for a complete example.
 
 <!-- Extras!
-[`@function dist:calc`](dist/dist.mcfunction)
+[`@function dist:calc`](dist.mcfunction)
 
 `@function_tag load`
 ```

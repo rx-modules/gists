@@ -23,6 +23,7 @@ execute unless entity b5feab18-60ed-5ffd-b394-d71674d85bf6 run summon minecraft:
 #> Get start
 tp b5feab18-60ed-5ffd-b394-d71674d85bf6 ~ ~ ~
 data modify storage temp: dist.start set from entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos
+
 #> Get either Pos or Custom
 execute unless data storage temp: dist.vector run data modify entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos set from entity @s Pos
 execute if data storage temp: dist.vector run data modify entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos set from storage temp: dist.vector
@@ -52,7 +53,7 @@ execute if score $component temp matches 2 if score $out temp matches -1..1 run 
 execute if score $component temp matches -1 run scoreboard players set $out temp 0
 
 #> Gather the unit vector (positioned is pos context ~ ~ ~)
-execute as b5feab18-60ed-5ffd-b394-d71674d85bf6 facing entity @s feet run tp @s ^ ^ ^1
+execute as b5feab18-60ed-5ffd-b394-d71674d85bf6 facing entity @s feet positioned 0.0 0.0 0.0 run tp @s ^ ^ ^1
 
 execute if score $component temp matches 0 store result score $unit_component temp run data get entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos[0] 100
 execute if score $component temp matches 1 store result score $unit_component temp run data get entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos[1] 100

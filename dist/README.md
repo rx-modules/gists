@@ -15,26 +15,23 @@ The output is in `$out temp` scaled by 1000 (for precision).
 Assuming the file is located at `dist:calc` just try the following examples in chat (or run `function dist:example`)!
 
 * This will calculate your distance from origin.
-	<!-- @function dist:example -->	
-
 	```
+	# @function dist:example
 	execute positioned 0.0 0.0 0.0 run function dist:calc
 	tellraw @a ["dist from origin: ", {"score": {"name": "$out", "objective": "temp"}}]
 	```
 
 * This will calculate the velocity of entity `@s`
-	<!-- @function(append) dist:example -->
-
 	```
+	# @function(append) dist:example
 	data modify storage temp: dist.vector set from entity @s Motion
 	execute positioned 0.0 0.0 0.0 run function dist:calc
 	tellraw @a ["velocity: ", {"score": {"name": "$out", "objective": "temp"}}]
 	```
  
 * This will measure the distance between two players
-	<!-- @function(append) dist:example -->
-
 	```
+	# @function(append) dist:example
 	execute at rx97 as vdvman1 run function dist:calc
 	tellraw @a ["dist: ", {"score": {"name": "$out", "objective": "temp"}}]
 	```

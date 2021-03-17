@@ -1,4 +1,4 @@
-# A place for small to medium mcfunction scripts to live
+# A home for rx-module snippets
 
 Articles:
 * [Calculating distance and vector magnitudes](dist)

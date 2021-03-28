@@ -50,6 +50,11 @@ data modify entity @e[type=skeleton, sort=nearest, limit=1] Motion set value [1.
 
 This command will apply `[1.0d, 1.0d, 1.0d]` this vector of motion on the skeleton *flinging* it through the air, with gravity eventually pulling it down.
 
+### Vector Components
+
+![pic](http://scienceres-edcp-educ.sites.olt.ubc.ca/files/2012/10/sec_phys_vectors_vectorComponents-940x705.jpg)
+
+
 ### Why do we care?
 
 Our original goal is to take an arrow and have it *seek* towards the nearest player. To do this, rather than trying to have the arrow **face** the nearest player, we'll change the arrow to move **towards** the nearest player, aka, adjust the `Motion` of that arrow so that it flies towards the player.

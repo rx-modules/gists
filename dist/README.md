@@ -126,11 +126,14 @@ Note that this example only looks at the x component. If the x component were 0,
 
 <details>
 
+<summary>Boilerplate to glue the datapack</summary>
+
 [`@function dist:calc`](dist.mcfunction)
 
 `@function dist:load`
 ```
 scoreboard objectives add temp dummy
+forceload add 0 0
 ```
 
 `@function_tag minecraft:load`

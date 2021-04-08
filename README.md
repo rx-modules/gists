@@ -7,3 +7,6 @@
 **Scripts**:
 * [Analyze `scoreboard.dat` using `pandas`](scoreboard-pandas)
 * [Find collisions in `minecraft` namespace between datapacks](find-collisions)
+
+**Misc**:
+* [Some packs and mods I play with](pack-catalog)

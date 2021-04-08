@@ -1,26 +1,26 @@
 **Mods**
-BetterCaves-Fabric - *Yungs Cave Mod. Expressive caves akin to 1.17. Diamonds become easier to find though.*
-healthcare [disabled] - *Adds healthbars. ATM there's a weird player kicking bug*
-BetterMineshafts-Fabric - *Self-explanatory*
-kb-resist-fix - *I wrote this lol. Fixes a kb knockback bug which drives me nuts*
-lazydfu - *Makes the DFU lazier, faster startup. Potentially don't use?*
-FabriKommander - *`/homes`. I should replace with Snave's warpstones*
-lithium-fabric - *Optimization*
-FabricProxy - *I use velocity*
-markdown-chat - *Awesome mod! Gives you discord-esque formatting expression*
-FabricTPA - *`/tpa`, `/tpahere`*
-mostructures - *Simply more structures*
-cavebiomes - *Adds biomes to caves*
-notenoughcrashes - *Helps when parsing crash reports w/ Yarn names*
-phosphor-fabric - *Lighting Optimization*
-defibrillator - *Helps in debugging player data*
-repurposed_structures - *Adds biome specific structures to all biomes w/ their different themes*
-fabric-carpet - *Some tweaks here, I forget*
-servertick-mc - *TPS graph viewable if mod is present on OP'd client*
-fabric-console - *Prettier console, tho I haven't noticed*
-stoneholm - *Sprawling underground villages, haven't seen one yet tbh*
-flora-doubling - *Bonemeal works like tall plants for small plants*
-villagerfix - *Nerfs discounting: Set to max 50% discount*
+* BetterCaves-Fabric - *Yungs Cave Mod. Expressive caves akin to 1.17. Diamonds become easier to find though.*
+* healthcare [disabled] - *Adds healthbars. ATM there's a weird player kicking bug*
+* BetterMineshafts-Fabric - *Self-explanatory*
+* kb-resist-fix - *I wrote this lol. Fixes a kb knockback bug which drives me nuts*
+* lazydfu - *Makes the DFU lazier, faster startup. Potentially don't use?*
+* FabriKommander - *`/homes`. I should replace with Snave's warpstones*
+* lithium-fabric - *Optimization*
+* FabricProxy - *I use velocity*
+* markdown-chat - *Awesome mod! Gives you discord-esque formatting expression*
+* FabricTPA - *`/tpa`, `/tpahere`*
+* mostructures - *Simply more structures*
+* cavebiomes - *Adds biomes to caves*
+* notenoughcrashes - *Helps when parsing crash reports w/ Yarn names*
+* phosphor-fabric - *Lighting Optimization*
+* defibrillator - *Helps in debugging player data*
+* repurposed_structures - *Adds biome specific structures to all biomes w/ their different themes*
+* fabric-carpet - *Some tweaks here, I forget*
+* servertick-mc - *TPS graph viewable if mod is present on OP'd client*
+* fabric-console - *Prettier console, tho I haven't noticed*
+* stoneholm - *Sprawling underground villages, haven't seen one yet tbh*
+* flora-doubling - *Bonemeal works like tall plants for small plants*
+* villagerfix - *Nerfs discounting: Set to max 50% discount*
 
 **Datapacks**
 

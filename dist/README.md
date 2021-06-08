@@ -17,7 +17,7 @@ Assuming the file is located at `dist:calc` just try the following examples in c
 * This will calculate your distance from origin.
 	<!-- @function dist:example -->	
 
-	```
+	```mcfunction
 	execute positioned 0.0 0.0 0.0 run function dist:calc
 	tellraw @a ["dist from origin: ", {"score": {"name": "$out", "objective": "temp"}}]
 	```
@@ -25,7 +25,7 @@ Assuming the file is located at `dist:calc` just try the following examples in c
 * This will calculate the velocity of entity `@s`
 	<!-- @function(append) dist:example -->
 
-	```
+	```mcfunction
 	data modify storage temp: dist.vector set from entity @s Motion
 	execute positioned 0.0 0.0 0.0 run function dist:calc
 	tellraw @a ["velocity: ", {"score": {"name": "$out", "objective": "temp"}}]
@@ -34,7 +34,7 @@ Assuming the file is located at `dist:calc` just try the following examples in c
 * This will measure the distance between two players
 	<!-- @function(append) dist:example -->
 
-	```
+	```mcfunction
 	execute at rx97 as vdvman1 run function dist:calc
 	tellraw @a ["dist: ", {"score": {"name": "$out", "objective": "temp"}}]
 	```
@@ -62,7 +62,7 @@ First, we can set the `Pos` tag of our helper entity to the `Motion` of entity `
 
 <!-- @function(append) dist:velocity -->
 
-```
+```mcfunction
 data modify entity b5feab18-60ed-5ffd-b394-d71674d85bf6 Pos set from entity @s Motion
 ```
 
@@ -78,7 +78,7 @@ Then, we can store the x component of our vector. We scale this up by 100,000 si
 
 <!-- @function(append) dist:velocity -->
 
-```
+```mcfunction
 execute store result score $velocity temp run data get entity @s Motion[0] 100000
 ```
 
@@ -100,7 +100,7 @@ Now, we can find our unit vector. To do this, we position outselves at the world
 
 <!-- @function(append) dist:velocity -->
 
-```
+```mcfunction
 execute positioned 0.0 0.0 0.0 as 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e facing entity @s feet run tp @s ^ ^ ^1
 execute store result score $unit temp run data get entity 6ded8fee-a099-56cd-9bdf-d92aa7bd8d5e Pos[0] 100
 ```
@@ -118,7 +118,7 @@ Lastly, dividing our x component from the `Motion` vector, `$velocity` by our un
 
 <!-- @function(append) dist:velocity -->
 
-```
+```mcfunction
 scoreboard players operation @s velocity /= $normal_x temp
 ```
 
@@ -131,7 +131,7 @@ Note that this example only looks at the x component. If the x component were 0,
 [`@function dist:calc`](dist.mcfunction)
 
 `@function dist:load`
-```
+```mcfunction
 scoreboard objectives add temp dummy
 forceload add 0 0
 ```

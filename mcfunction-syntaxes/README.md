@@ -12,5 +12,5 @@ I also extended this cool [Markdown Extended](https://github.com/jonschlinkert/s
 	- [Textmate](mcfunction-jinja.YAML-tmLanguage) (Requires [Arc's Language](https://github.com/Arcensoth/language-mcfunction) and Jinja2 extension as `text.jinja`)
 
 - markdown-extended with mcfunction
-	- [Sublime]("Markdown Extended.sublime-syntax") (Requires [Arc's Sublime](mcfunction.sublime-syntax) in User folder)
-	- [Textmate]("Markdown Extended.YAML-tmLanguage") (Requires [Arc's Language](https://github.com/Arcensoth/language-mcfunction))
+	- [Sublime](Markdown%20Extended.sublime-syntax) (Requires [Arc's Sublime](mcfunction.sublime-syntax) in User folder)
+	- [Textmate](Markdown%20Extended.YAML-tmLanguage) (Requires [Arc's Language](https://github.com/Arcensoth/language-mcfunction))

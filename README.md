@@ -10,3 +10,4 @@
 
 **Misc**:
 * [Some packs and mods I play with](pack-catalog)
+* [Custom syntax extensions](mcfunction-syntaxes)

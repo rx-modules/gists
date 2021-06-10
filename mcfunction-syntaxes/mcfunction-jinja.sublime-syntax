@@ -5,21 +5,27 @@ name: 'MCFunction (Jinja Templates)'
 file_extensions:
   - mcfunction
 scope: source.mcfunction.jinja
+extends: BetterJinja.sublime-syntax
 
 contexts:
   main:
     - match: ""
       push: "mcfunction.sublime-syntax"
       with_prototype:
-        - match: "(?={{)"
-          push:
-            - match: "(?<=}})"
-              pop: true
-            - include: "scope:text.jinja"
-        - match: "(?={%)"
-          push:
-            - match: "(?<=%})"
-              pop: true
-            - include: "scope:text.jinja"
+        - include: statement_blocks
+        - include: expression_blocks
+        - include: line_statements
+
+  line_statements:
+    - match: \s*(#!)
+      scope: punctuation.definition.line-statement.jinja
+      push:
+        - meta_scope: meta.tag.line-statement.jinja
+        - match: ':'
+          scope: punctuation.terminator.jinja
+        - match: $\n?
+          pop: true
+        - include: match_keywords
+        - include: logical_operators
 
 uuid: 488399C0-5D29-4704-BE85-E03A461C34E7

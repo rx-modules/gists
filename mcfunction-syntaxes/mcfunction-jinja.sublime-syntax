@@ -9,6 +9,7 @@ extends: BetterJinja.sublime-syntax
 
 contexts:
   main:
+    - meta_prepend: true
     - match: ""
       push: "mcfunction.sublime-syntax"
       with_prototype:
